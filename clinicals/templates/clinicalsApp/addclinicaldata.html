@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add clinical Data</title>
+    <link rel="stylesheet" href="{% static "css/clinicals.css"%}"/>
+</head>
+<body>
+    <h2>Patient Details:</h2>
+    First Name : {{patient.firstname}} <br>
+    Last Name : {{patient.lastname}} <br>
+    Age : {{patient.age}} <br>
+
+    <h2>Add Clinical Data:</h2>
+    <form action="" method="post">
+        <table>
+            {%csrf_token%}
+            {{form.as_table}}
+        </table>
+        <input type="submit" value="Add Clinical Data">
+    </form>
+</body>
+</html>
