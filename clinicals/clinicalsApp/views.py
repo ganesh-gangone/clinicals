@@ -4,6 +4,8 @@ from clinicalsApp.models import *
 from clinicalsApp.forms import ClinicalDataForm
 from django.urls import reverse_lazy
 # Create your views here.
+def index(request):
+    return render(request,'clinicalsApp/index.html')
 class PatientListView(ListView):
     model = Patient
 class PatientCreateView(CreateView):
